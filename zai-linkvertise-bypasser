@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         [Zai Working] linkvertise and krnl bypasser
+// @name         [Zai Working] linkvertise and krnl bypasser l
 // @namespace    http://tampermonkey.net/
 // @homepageURL  https://bypass.city
 // @description  just waits 15 seconds for krnl and works fine with the other stuff 2 (it waits no time for other stuff) :)
@@ -27,7 +27,7 @@
 // @grant        GM_xmlhttpRequest
 // @grant        GM.setValue
 // @grant        GM.deleteValue
-// @version      12.3.0
+// @version      2.0
 // @author       varram
 // @connect      bypass.city
 // @icon         https://zaiofficial.github.io/public/asset.png
@@ -68,7 +68,7 @@
   var injectScriptInfo = () => {
     const injectJs = `
     window.scriptInfo = {
-        version: "${"12.3.0"}",
+        version: "${"2.0"}",
         buildTime: "${"12/2/2023, 2:04:08 AM"}",
         branch: "${"release"}",
         release: "${"fd9e4b0"}",
@@ -82,7 +82,7 @@
     console.log("sendUserscriptInfoEvent");
     const event = new CustomEvent("userScriptInfo", {
       detail: {
-        version: "12.3.0",
+        version: "2.0",
         buildTime: "12/2/2023, 2:04:08 AM",
         branch: "release",
         release: "fd9e4b0",
@@ -190,7 +190,7 @@
       div.innerHTML = notify_element_default;
       shadow.appendChild(style);
       shadow.appendChild(div);
-      shadow.getElementById("version").innerText = "12.3.0 (fd9e4b0)";
+      shadow.getElementById("version").innerText = "2.0 (fd9e4b0)";
     }
     connectedCallback() {
       this.updateContent();
@@ -273,7 +273,7 @@
       const bypassCityUrl = new URL(`${"https://bypass.city"}/bypass`);
       bypassCityUrl.searchParams.set("bypass", window.location.href);
       bypassCityUrl.searchParams.set("userscript", "true");
-      bypassCityUrl.searchParams.set("userscript-version", "12.3.0");
+      bypassCityUrl.searchParams.set("userscript-version", "2.0");
       window.open(bypassCityUrl.href, "_self");
     }
   };
@@ -284,7 +284,7 @@
 
   // src/main.ts
   (async () => {
-    console.info("Linkvertise Userscript", "12.3.0 (fd9e4b0)", window.location.href);
+    console.info("Linkvertise Userscript", "2.0 (fd9e4b0)", window.location.href);
     await bypassCityListener();
     await linkvertiseListener();
   })();
